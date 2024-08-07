@@ -1,0 +1,81 @@
+.contenedor-contactos{
+    background-color:#182125;
+    width: 410px;
+    height: 650px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.header-contactos{
+    height: 100px;
+    background-color:#202c33;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.header-iconos{
+    color: white;
+    display: flex;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.bi-camera{
+    margin-right: 10px;
+    
+}
+
+
+.titulo{
+    color: aliceblue;
+    font-size: 20px;
+    padding-left: 15px;
+    display: flex;
+    justify-content: start;
+    padding-top: 20px;
+    
+}
+
+.contactos{
+    background-color:  #182125;
+    height: 470px;
+    
+
+}
+
+.contacto-1{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items:center ;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.nombre-contacto{
+    color: white;
+}
+
+
+
+
+.footer-contactos{
+    height: 80px;
+    background-color: #202c33;
+}
+
+.iconos-2{
+    display: flex;
+    gap: 20px;
+    padding-top: 25px;
+    justify-content:space-around;
+    color: aliceblue;
+    font-size: 20px;
+    
+}
