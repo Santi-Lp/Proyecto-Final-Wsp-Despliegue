@@ -1,6 +1,7 @@
 .contenedor-chat {
     background-image: url(/assets/fondo\ negro\ wsp.jpg);
-    width: 410px;
+    width: 100vw;
+    height: 50%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     overflow: hidden;

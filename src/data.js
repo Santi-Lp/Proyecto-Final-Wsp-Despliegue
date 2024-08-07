@@ -90,7 +90,7 @@ const mensajes = [
   {
     nombre: 'Lebron',
     id: 4,
-    thumbnail: './assets/Lebron.png',
+    thumbnail: 'https://p.kindpng.com/picc/s/110-1109780_lakers-media-day-2018-lebron-james-png-lakers.png',
     ultima_conexion: 'hoy',
     conversacion: [
       {
