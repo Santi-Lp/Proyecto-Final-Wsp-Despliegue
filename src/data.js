@@ -1,7 +1,7 @@
 const mensajes = [
   {
     nombre: "Messi",
-    thumbnail: "./assets/imagen-messi.jpg",
+    thumbnail: "https://i.pinimg.com/736x/9b/a6/83/9ba683fbf49a0f956c630027f958eb25.jpg",
     ultima_conexion: "ayer",
     id: 1,
     conversacion: [
@@ -39,7 +39,7 @@ const mensajes = [
   {
     nombre: 'Abuela',
     id: 2,
-    thumbnail: './assets/abuela.jpg',
+    thumbnail: 'https://www.pngfind.com/pngs/m/317-3177131_636682202684372240-user-profile-photo-round-hd-png-download.png',
     ultima_conexion: 'ayer',
     conversacion: [
       {
@@ -61,7 +61,7 @@ const mensajes = [
   {
     nombre: 'Cristiano',
     id: 3,
-    thumbnail: './assets/Ronaldo.jpg',
+    thumbnail: 'https://i.pinimg.com/736x/b7/76/1c/b7761c30f98e12c203879f551f1a615a.jpg',
     ultima_conexion: 'hoy',
     conversacion: [
       {
