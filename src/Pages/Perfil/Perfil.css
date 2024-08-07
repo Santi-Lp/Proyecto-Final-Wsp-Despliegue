@@ -1,7 +1,7 @@
 .contenedor-perfil{
         background-color:#182125;
         width: 100vw;
-        height: 70%;
+        height: 100%;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
         border-bottom-left-radius: 15px;
@@ -251,4 +251,145 @@
 .bi-hand-thumbs-down{
     display: flex;
     align-items: center;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .contenedor-perfil {
+        height: 90%;
+    }
+
+    .foto-perfil-2 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nombre-perfil,
+    .numero-perfil {
+        font-size: 14px;
+    }
+
+    .iconos-perfil {
+        font-size: 20px;
+    }
+
+    .contenedor-iconos-perfil {
+        font-size: 18px;
+    }
+
+    .contenedor-iconos-perfil .contenedor-telefono,
+    .contenedor-iconos-perfil .contenedor-camara,
+    .contenedor-iconos-perfil .contenedor-lupa {
+        width: 50px;
+        height: 35px;
+    }
+
+    .opciones-perfil,
+    .opciones-perfil-2 {
+        padding: 10px;
+    }
+
+    .contenedor-notificaciones,
+    .contenedor-archivo,
+    .contenedor-cifrado,
+    .contenedor-favoritos,
+    .contenedor-bloquear,
+    .contenedor-reportar {
+        height: 25px;
+        margin-top: 10px;
+    }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .contenedor-perfil {
+        height: 80%;
+    }
+
+    .foto-perfil-2 {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nombre-perfil,
+    .numero-perfil {
+        font-size: 16px;
+    }
+
+    .iconos-perfil {
+        font-size: 22px;
+    }
+
+    .contenedor-iconos-perfil {
+        font-size: 19px;
+    }
+
+    .contenedor-iconos-perfil .contenedor-telefono,
+    .contenedor-iconos-perfil .contenedor-camara,
+    .contenedor-iconos-perfil .contenedor-lupa {
+        width: 55px;
+        height: 38px;
+    }
+
+    .opciones-perfil,
+    .opciones-perfil-2 {
+        padding: 15px;
+    }
+
+    .contenedor-notificaciones,
+    .contenedor-archivo,
+    .contenedor-cifrado,
+    .contenedor-favoritos,
+    .contenedor-bloquear,
+    .contenedor-reportar {
+        height: 28px;
+        margin-top: 12px;
+    }
+}
+
+/* Estilos para pantallas grandes (desktops) */
+@media (min-width: 1201px) {
+    .contenedor-perfil {
+        height: 70%;
+    }
+
+    .foto-perfil-2 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nombre-perfil,
+    .numero-perfil {
+        font-size: 18px;
+    }
+
+    .iconos-perfil {
+        font-size: 25px;
+    }
+
+    .contenedor-iconos-perfil {
+        font-size: 20px;
+    }
+
+    .contenedor-iconos-perfil .contenedor-telefono,
+    .contenedor-iconos-perfil .contenedor-camara,
+    .contenedor-iconos-perfil .contenedor-lupa {
+        width: 60px;
+        height: 40px;
+    }
+
+    .opciones-perfil,
+    .opciones-perfil-2 {
+        padding: 20px;
+    }
+
+    .contenedor-notificaciones,
+    .contenedor-archivo,
+    .contenedor-cifrado,
+    .contenedor-favoritos,
+    .contenedor-bloquear,
+    .contenedor-reportar {
+        height: 30px;
+        margin-top: 15px;
+    }
 }

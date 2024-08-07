@@ -114,3 +114,119 @@
     font-size: 20px;
     color: #8696A0;
 }
+
+@media (max-width: 600px) {
+    .informacion-contacto {
+        padding: 8px 10px;
+    }
+
+    .foto-perfil {
+        width: 35px;
+        height: 35px;
+    }
+
+    .informacion-contacto i {
+        font-size: 18px;
+    }
+
+    .informacion-contacto .nombre-contacto {
+        font-size: 14px;
+    }
+
+    .mensajes {
+        height: calc(100vh - 200px);
+        padding: 10px 15px 60px;
+    }
+
+    .contenedor-input input {
+        font-size: 14px;
+    }
+
+    .escribir-mensaje .boton-enviar {
+        width: 35px;
+        height: 35px;
+        padding: 8px;
+    }
+
+    .icono-enviar {
+        font-size: 18px;
+    }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .informacion-contacto {
+        padding: 10px 12px;
+    }
+
+    .foto-perfil {
+        width: 38px;
+        height: 38px;
+    }
+
+    .informacion-contacto i {
+        font-size: 20px;
+    }
+
+    .informacion-contacto .nombre-contacto {
+        font-size: 15px;
+    }
+
+    .mensajes {
+        height: calc(100vh - 220px);
+        padding: 12px 18px 65px;
+    }
+
+    .contenedor-input input {
+        font-size: 15px;
+    }
+
+    .escribir-mensaje .boton-enviar {
+        width: 38px;
+        height: 38px;
+        padding: 9px;
+    }
+
+    .icono-enviar {
+        font-size: 19px;
+    }
+}
+
+/* Estilos para pantallas grandes (desktops) */
+@media (min-width: 1201px) {
+    .informacion-contacto {
+        padding: 12px 15px;
+    }
+
+    .foto-perfil {
+        width: 40px;
+        height: 40px;
+    }
+
+    .informacion-contacto i {
+        font-size: 22px;
+    }
+
+    .informacion-contacto .nombre-contacto {
+        font-size: 16px;
+    }
+
+    .mensajes {
+        height: 510px;
+        padding: 15px 20px 70px;
+    }
+
+    .contenedor-input input {
+        font-size: 15px;
+    }
+
+    .escribir-mensaje .boton-enviar {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+    }
+
+    .icono-enviar {
+        font-size: 20px;
+    }
+}

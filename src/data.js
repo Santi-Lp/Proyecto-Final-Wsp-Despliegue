@@ -37,21 +37,21 @@ const mensajes = [
     ]
   },
   {
-    nombre: 'Abuela',
+    nombre: 'Chino',
     id: 2,
-    thumbnail: 'https://www.pngfind.com/pngs/m/317-3177131_636682202684372240-user-profile-photo-round-hd-png-download.png',
+    thumbnail: 'https://tse2.mm.bing.net/th?id=OIP.V4R8pbjrT-HABV5cME_pxAHaGK&pid=Api&P=0&h=180',
     ultima_conexion: 'ayer',
     conversacion: [
       {
         autor: 'yo',
-        contenido: 'Hola abuelita, ¿cómo estás?',
+        contenido: 'Hola amigo, ¿cómo estás?',
         estado: 'entregado',
         fecha: '13:00',
         id: 'msj-1'
       },
       {
-        autor: 'Abuelita',
-        contenido: 'Hola mi niño, estoy bien. ¿Y tú?',
+        autor: 'Chino',
+        contenido: 'Hola bro, todo bien. ¿Y vos?',
         estado: 'visto',
         fecha: '13:37',
         id: 'msj-2'
@@ -66,21 +66,21 @@ const mensajes = [
     conversacion: [
       {
         autor: 'yo',
-        contenido: '¿Vamos al cine?',
+        contenido: '¿Me mandas un video para mi novia?',
         estado: 'entregado',
         fecha: 'ayer',
         id: 'msj-1'
       },
       {
         autor: 'Pedro',
-        contenido: 'Sí, claro. ¿A qué hora?',
+        contenido: 'Sí, claro. ¿Como se llama?',
         estado: 'visto',
         fecha: 'ayer',
         id: 'msj-2'
       },
       {
         autor: 'yo',
-        contenido: 'A las 7pm está bien.',
+        contenido: 'Que te importa a vos...',
         estado: 'visto',
         fecha: 'ayer',
         id: 'msj-3'
@@ -95,14 +95,14 @@ const mensajes = [
     conversacion: [
       {
         autor: 'yo',
-        contenido: 'Hola Laura, ¿qué tal?',
+        contenido: 'Hola Capo, ¿como va?',
         estado: 'entregado',
         fecha: '18:08',
         id: 'msj-1'
       },
       {
-        autor: 'Laura',
-        contenido: 'Hola, todo bien. ¿Y tú?',
+        autor: 'Lebron',
+        contenido: 'Hi, Perfect and you',
         estado: 'visto',
         fecha: '18:43',
         id: 'msj-2'
