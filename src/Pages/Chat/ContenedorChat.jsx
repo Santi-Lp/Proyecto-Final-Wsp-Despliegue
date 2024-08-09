@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './ContenedorChat.css'
-import mensajes from '../../data';
-import Mensajes from '../Mensaje/Mensaje';
+import './ContenedorChat.css';
+import { Mensajes,FormularioMensaje } from '../../Components/index-componentes';
 
-const ContenedorChat = () => {
+const ContenedorChat = ({ listaMensajes, handleSubmit, formMensaje, setFormMensaje }) => {
     const { id } = useParams();
-    const [contacto, setContacto] = useState(null);
-
-    useEffect(() => {
-        const contactoEncontrado = mensajes.find(contacto => contacto.id === parseInt(id));
-        setContacto(contactoEncontrado);
-    }, [id]);
-
+    const contacto = listaMensajes.find(contacto => contacto.id === parseInt(id));
 
     if (!contacto) return <div>Cargando...</div>;
-    
+
     return (
         <div className='contenedor-chat'>
             <Link to={`/perfil/${contacto.id}`}>
@@ -41,6 +34,7 @@ const ContenedorChat = () => {
                     />
                 ))}
             </div>
+            <FormularioMensaje formMensaje={formMensaje} setFormMensaje={setFormMensaje} handleSubmit={(e) => handleSubmit(e, parseInt(id))} />
         </div>
     );
 };

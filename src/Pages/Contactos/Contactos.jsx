@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Contactos.css"
-import mensajes from '../../data'
+import mensajes from '../../Data/data'
 
 
 const Contactos = () => {

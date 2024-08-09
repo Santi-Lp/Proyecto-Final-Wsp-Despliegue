@@ -37,13 +37,15 @@
 
 .contactos {
     background-color: #182125;
-    height: 470px;
+    height: 100%;
     overflow-y: auto;
+
 }
 
 .contacto-1 {
-    margin-top: 10px;
     width: 100%;
+    height: 70px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     padding-bottom: 5px;
@@ -70,6 +72,11 @@
 }
 
 @media (max-width: 600px) {
+
+    .contenedor-contactos{
+        height: calc();
+    }
+
     .header-contactos, .footer-contactos {
         flex-direction: row;
         align-items: center;
@@ -99,6 +106,7 @@
         padding: 0 20px;
     }
 
+
     .header-iconos, .titulo, .iconos-2 {
         font-size: 18px;
     }
@@ -113,6 +121,8 @@
     .header-contactos, .footer-contactos {
         padding: 0 30px;
     }
+
+
 
     .header-iconos, .titulo, .iconos-2 {
         font-size: 20px;

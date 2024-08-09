@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Mensaje.css'
-import mensajes from '../../data'
 
 
 const Mensajes = ({ autor, contenido, fecha, estado }) => {

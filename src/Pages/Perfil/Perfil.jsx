@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import mensajes from '../../data';
+import mensajes from '../../Data/data';
 import "./Perfil.css";
 
 const Perfil = () => {
@@ -25,7 +25,7 @@ const Perfil = () => {
           <img src={contacto.thumbnail} alt="foto-usuario" className='foto-perfil-2' />
         </div>
         <span className='nombre-perfil'>{contacto.nombre}</span>
-        <span className='numero-perfil'> +54 9 11 4726 6890</span> 
+        <span className='numero-perfil'> {contacto.numero}</span> 
         <div className='contenedor-iconos-perfil'>
           <div className='contenedor-telefono'>
             <i className="bi bi-telephone"></i>

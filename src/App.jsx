@@ -1,45 +1,30 @@
-import React, { useState } from 'react'
-import ContenedorChat from './Components/ContenedorChat/ContenedorChat'
-import FormularioMensaje from './Components/FormularioMensaje/FormularioMensaje'
-import { Contactos, Perfil } from './Pages/index'
-import mensajes from './data'
-import { Route, Routes } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Contactos, Perfil, ContenedorChat } from './Pages/index';
+import { LocalStorageMensajes, LogicaChat } from './Components/index-componentes';
+import { Route, Routes, useParams } from 'react-router-dom';
 
-const App = () =>{
+const App = () => {
 
-
-  const [listaMensajes, setlistaMensajes] = useState(mensajes)
-  const [formMensaje, setFormMensaje] = useState({contenido: ''})
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const nuevoMensaje = {
-      autor: 'yo', 
-      contenido: formMensaje.contenido,
-      fecha: ' 10:15', 
-      estado: 'no entregado', 
-      id: listaMensajes.length + 1
-    }
-    setlistaMensajes([...listaMensajes, nuevoMensaje])
-    setFormMensaje({contenido: ''})
-  }
+  const {
+    listaMensajes,
+    setListaMensajes,
+    formMensaje,
+    setFormMensaje,
+    handleSubmit
+  } = LogicaChat ();
+  
 
   return (
-    <Routes>
-
-      <Route path='/' element={<Contactos/>}/>
-
-      <Route path='/chat/:id' element={
     <>
-      <ContenedorChat mensajes={listaMensajes}/>
-      <FormularioMensaje formMensaje={formMensaje} setFormMensaje={setFormMensaje} handleSubmit={handleSubmit}/>
-    </>
-      }/>
+    <LocalStorageMensajes listaMensajes={listaMensajes} setListaMensajes={setListaMensajes} />
 
-      <Route path='/perfil/:id' element={<Perfil/>}/>
-
+    <Routes>
+      <Route path='/' element={<Contactos />} />
+      <Route path='/chat/:id' element={<ContenedorChat listaMensajes={listaMensajes} handleSubmit={handleSubmit} formMensaje={formMensaje} setFormMensaje={setFormMensaje} />} />
+      <Route path='/perfil/:id' element={<Perfil />} />
     </Routes>
-  )
-}
+    </>
+  );
+};
 
-export default App
+export default App;

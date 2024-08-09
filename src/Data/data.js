@@ -1,6 +1,7 @@
 const mensajes = [
   {
     nombre: "Messi",
+    numero: "+54 9 11 5672-1290",
     thumbnail: "https://i.pinimg.com/736x/9b/a6/83/9ba683fbf49a0f956c630027f958eb25.jpg",
     ultima_conexion: "ayer",
     id: 1,
@@ -38,6 +39,7 @@ const mensajes = [
   },
   {
     nombre: 'Chino',
+    numero: "+56 9 11 4997-2433",
     id: 2,
     thumbnail: 'https://tse2.mm.bing.net/th?id=OIP.V4R8pbjrT-HABV5cME_pxAHaGK&pid=Api&P=0&h=180',
     ultima_conexion: 'ayer',
@@ -60,6 +62,7 @@ const mensajes = [
   },
   {
     nombre: 'Cristiano',
+    numero: "+24 9 11 5930-9713",
     id: 3,
     thumbnail: 'https://i.pinimg.com/736x/b7/76/1c/b7761c30f98e12c203879f551f1a615a.jpg',
     ultima_conexion: 'hoy',
@@ -68,7 +71,7 @@ const mensajes = [
         autor: 'yo',
         contenido: '¿Me mandas un video para mi novia?',
         estado: 'entregado',
-        fecha: 'ayer',
+        fecha: 'ayers',
         id: 'msj-1'
       },
       {
@@ -89,6 +92,7 @@ const mensajes = [
   },
   {
     nombre: 'Lebron',
+    numero: "+54 9 11 6965-7743",
     id: 4,
     thumbnail: 'https://p.kindpng.com/picc/s/110-1109780_lakers-media-day-2018-lebron-james-png-lakers.png',
     ultima_conexion: 'hoy',
