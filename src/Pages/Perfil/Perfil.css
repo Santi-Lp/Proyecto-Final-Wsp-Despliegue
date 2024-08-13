@@ -253,7 +253,6 @@
     align-items: center;
 }
 
-/* Estilos para pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
     .contenedor-perfil {
         height: 90%;
@@ -300,7 +299,6 @@
     }
 }
 
-/* Estilos para pantallas medianas (tablets) */
 @media (min-width: 601px) and (max-width: 1200px) {
     .contenedor-perfil {
         height: 80%;
@@ -347,7 +345,6 @@
     }
 }
 
-/* Estilos para pantallas grandes (desktops) */
 @media (min-width: 1201px) {
     .contenedor-perfil {
         height: 70%;

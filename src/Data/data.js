@@ -71,7 +71,7 @@ const mensajes = [
         autor: 'yo',
         contenido: '¿Me mandas un video para mi novia?',
         estado: 'entregado',
-        fecha: 'ayers',
+        fecha: 'ayer',
         id: 'msj-1'
       },
       {
