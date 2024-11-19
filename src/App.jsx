@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Contactos, Perfil, ContenedorChat } from './Pages/index';
 import { LocalStorageMensajes, LogicaChat } from './Components/index-componentes';
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes,} from 'react-router-dom';
 
 const App = () => {
 

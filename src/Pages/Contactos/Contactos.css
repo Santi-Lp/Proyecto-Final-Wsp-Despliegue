@@ -8,19 +8,21 @@
 }
 
 .header-contactos {
-    height: 100px;
-    background-color: #202c33;
+    height: 70px;
+    background-color: #182125;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    margin-top: 10px;
 }
 
 .header-iconos {
     color: white;
     display: flex;
-    font-size: 20px;
+    font-size: 50px;
     padding-right: 10px;
+    margin-top: 5px;
 }
 
 .bi-camera {
@@ -33,13 +35,13 @@
     display: flex;
     justify-content: start;
     padding-left: 15px;
+    margin-top: 5px;
 }
 
 .contactos {
     background-color: #182125;
     height: 100%;
     overflow-y: auto;
-
 }
 
 .contacto-1 {
@@ -71,10 +73,41 @@
     font-size: 20px;
 }
 
-@media (max-width: 600px) {
 
-    .contenedor-contactos{
-        height: calc();
+.contenedor-busqueda {
+    padding: 10px 15px;
+    background-color: #182125;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+}
+
+.contenedor-busqueda input {
+    width: 90%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #202c33;
+    color:white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-busqueda input::placeholder {
+    color: #888;
+}
+
+.contacto-undefined {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .contenedor-contactos {
+        height: calc(100vh - 80px); 
     }
 
     .header-contactos, .footer-contactos {
@@ -84,7 +117,7 @@
         padding: 10px 0;
     }
 
-    .header-contactos, .titulo{
+    .header-contactos, .titulo {
         padding-left: 10px;
     }
 
@@ -98,14 +131,20 @@
     .contactos {
         height: calc(100vh - 180px);
     }
-}
 
+    .search-container {
+        padding: 10px 10px;
+    }
+
+    .contenedor-busqueda input {
+        width: 80%;
+    }
+}
 
 @media (min-width: 601px) and (max-width: 1200px) {
     .header-contactos, .footer-contactos {
         padding: 0 20px;
     }
-
 
     .header-iconos, .titulo, .iconos-2 {
         font-size: 18px;
@@ -114,15 +153,16 @@
     .contactos {
         height: calc(100vh - 180px);
     }
-}
 
+    .contenedor-busqueda {
+        padding: 10px 20px;
+    }
+}
 
 @media (min-width: 1201px) {
     .header-contactos, .footer-contactos {
         padding: 0 30px;
     }
-
-
 
     .header-iconos, .titulo, .iconos-2 {
         font-size: 20px;
@@ -132,3 +172,4 @@
         height: calc(100vh - 180px);
     }
 }
+

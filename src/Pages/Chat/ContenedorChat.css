@@ -82,6 +82,7 @@
 .contenedor-input input {
     flex: 1;
     background-color: transparent;
+    color: white;
     padding: 10px;
     border: none;
     font-size: 15px;

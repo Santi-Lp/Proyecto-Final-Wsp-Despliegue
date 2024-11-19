@@ -8,10 +8,16 @@ const LogicaChat = () => {
 
     const handleSubmit = (e, id) => {
         e.preventDefault();
+
+        if (!formMensaje.contenido.trim()) {
+            alert("El mensaje no puede estar vacío");
+            return; // Salir si el mensaje no es válido
+        }
+
         const nuevoMensaje = {
             autor: 'yo',
             contenido: formMensaje.contenido,
-            fecha: ' 10:15',
+            fecha: new Date().toLocaleTimeString(),
             estado: 'no entregado',
             id: `msj-${listaMensajes.find(contacto => contacto.id === id).conversacion.length + 1}`
         };
