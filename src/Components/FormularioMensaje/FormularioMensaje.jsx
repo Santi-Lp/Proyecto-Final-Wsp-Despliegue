@@ -9,14 +9,7 @@ const FormularioMensaje = ({ formMensaje, setFormMensaje, handleSubmit }) => {
         setFormMensaje({ ...formMensaje, [name]: value })
     }
 
-    const validateForm = () => {
-        if(!formMensaje.mensaje.trim()){
-            setError("El mensaje no puede estar vacio");
-            return false;
-        }
-        setError("");
-        return true;
-    }
+    
 
     
     return (

@@ -11,7 +11,7 @@ const LogicaChat = () => {
 
         if (!formMensaje.contenido.trim()) {
             alert("El mensaje no puede estar vacío");
-            return; // Salir si el mensaje no es válido
+            return; 
         }
 
         const nuevoMensaje = {

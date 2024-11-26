@@ -16,8 +16,6 @@ const handleSearchChange = (e) => {
   setBusqueda(e.target.value);
 };
 
-
-  
   return (
     <div className='contenedor-contactos'>
       <div className='header-contactos'>

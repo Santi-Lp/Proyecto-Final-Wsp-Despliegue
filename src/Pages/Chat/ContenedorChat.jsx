@@ -13,7 +13,7 @@ const ContenedorChat = ({ listaMensajes, handleSubmit, formMensaje, setFormMensa
         <div className='contenedor-chat'>
             <Link to={`/perfil/${contacto.id}`}>
                 <div className='informacion-contacto'>
-                    <Link to='/'> <i className="bi bi-arrow-left"></i></Link>
+                    <Link to='/contactos'> <i className="bi bi-arrow-left"></i></Link>
                     <img src={contacto.thumbnail} alt="foto-usuario" className='foto-perfil' />
                     <span className='nombre-contacto'>{contacto.nombre}</span>
                     <div className='iconos'>
