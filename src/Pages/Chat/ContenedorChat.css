@@ -1,11 +1,13 @@
+
 .contenedor-chat {
     background-image: url(https://e1.pxfuel.com/desktop-wallpaper/517/930/desktop-wallpaper-whatsapp-dark-whatsapp.jpg);
     width: 100vw;
-    height: 50%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    overflow: hidden;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .informacion-contacto {
@@ -43,7 +45,7 @@
 }
 
 .mensajes {
-    height: 510px;
+    flex: 1; 
     overflow-y: auto;
     padding: 15px 20px 70px;
 }
@@ -52,8 +54,6 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     background-color: #202c33;
 }
 
@@ -76,9 +76,6 @@
     margin-left: 5px;
 }
 
-
-
-
 .contenedor-input input {
     flex: 1;
     background-color: transparent;
@@ -88,7 +85,6 @@
     font-size: 15px;
     outline: none;
 }
-
 
 .escribir-mensaje input::placeholder {
     font-size: 16px;
@@ -116,6 +112,7 @@
     color: #8696A0;
 }
 
+
 @media (max-width: 600px) {
     .informacion-contacto {
         padding: 8px 10px;
@@ -135,7 +132,6 @@
     }
 
     .mensajes {
-        height: calc(100vh - 200px);
         padding: 10px 15px 60px;
     }
 
@@ -172,11 +168,6 @@
         font-size: 15px;
     }
 
-    .mensajes {
-        height: calc(100vh - 220px);
-        padding: 12px 18px 65px;
-    }
-
     .contenedor-input input {
         font-size: 15px;
     }
@@ -189,44 +180,5 @@
 
     .icono-enviar {
         font-size: 19px;
-    }
-}
-
-
-@media (min-width: 1201px) {
-    .informacion-contacto {
-        padding: 12px 15px;
-    }
-
-    .foto-perfil {
-        width: 40px;
-        height: 40px;
-    }
-
-    .informacion-contacto i {
-        font-size: 22px;
-    }
-
-    .informacion-contacto .nombre-contacto {
-        font-size: 16px;
-    }
-
-    .mensajes {
-        height: 510px;
-        padding: 15px 20px 70px;
-    }
-
-    .contenedor-input input {
-        font-size: 15px;
-    }
-
-    .escribir-mensaje .boton-enviar {
-        width: 40px;
-        height: 40px;
-        padding: 10px;
-    }
-
-    .icono-enviar {
-        font-size: 20px;
     }
 }

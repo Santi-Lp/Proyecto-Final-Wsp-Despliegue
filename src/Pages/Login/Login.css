@@ -13,6 +13,7 @@
     padding: 50px 60px 70px;
     text-align: center;
     border-radius: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .form-content h1{
@@ -94,3 +95,51 @@ form span a{
 .input-group{
     height: 200px;
 }
+@media (max-width: 600px) {
+    .container {
+        width: 100vw; 
+        height: 100vh; 
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .form-content {
+        width: 100%; 
+        max-width: 400px; 
+        height: auto; 
+        padding: 20px; 
+        box-sizing: border-box; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .input-field {
+        width: 100%; 
+        margin: 10px 0; 
+    }
+
+    input {
+        width: 100%; 
+    }
+
+    .btn-field {
+        width: 100%; 
+        margin-top: 20px;
+    }
+
+    .btn-field button {
+        width: 100%; 
+        height: 50px; 
+        font-size: 16px; 
+    }
+
+    form span {
+        font-size: 14px; 
+        text-align: center; 
+        display: block; 
+    }
+}
+

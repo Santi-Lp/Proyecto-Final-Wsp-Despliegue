@@ -80,7 +80,7 @@ form span a{
 }
 
 .btn-field button{
-    margin-top: 30px;
+    margin-top: 100px;
     flex-basis: 50%;
     font-size: 16px;
     background-color: #04bd7d;
@@ -94,3 +94,5 @@ form span a{
 .input-group{
     height: 200px;
 }
+
+

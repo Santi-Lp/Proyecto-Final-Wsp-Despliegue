@@ -62,4 +62,6 @@ const handleSearchChange = (e) => {
   )
 }
 
+
+
 export default Contactos

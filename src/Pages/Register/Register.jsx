@@ -1,25 +1,68 @@
 import React from 'react'
 import "./Register.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import extraerFormulario from '../../utils/extractFormData.js'
+
+
 
 const Register = () => {
+    const navigate = useNavigate();
+
+    const handleSubmitRegister = (e) => {
+        e.preventDefault();
+        const formulario = e.target;
+        const formulario_valores = new FormData(formulario);
+        const formulario_campos = {
+            "name" : "",
+            "email" : "",
+            "password" : "",
+            "number" : ""
+        }
+        const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
+        fetch("http://localhost:5000/api/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(Objeto_valores) 
+        })
+        .then(response => {
+            if(response.ok) {
+                alert("Usuario creado correctamente");
+                navigate("/login");
+            } else {
+                alert("Error al crear el usuario");
+            }
+        })
+        .catch(error => {
+            console.error( "Error al crear el usuario",error);
+            alert("Error al crear el usuario");
+        })
+
+        
+        
+    }
   return (
     <div className='container'>
         <div className='form-content'>
         <h1> Registrate</h1>
-        <form>
+        <form onSubmit={handleSubmitRegister}>
             <div className='input-group'>
             <div className='input-field'>
-            <i class="bi bi-person-fill"></i>
-                <input name="name" id= "name" placeholder= "Cristian Suarez" type="text" />
+            <i className="bi bi-person-fill"></i>
+                <input name="name" id= "name" placeholder= "Nombre" type="text" />
             </div>
             <div className='input-field'>
-            <i class="bi bi-envelope-fill"></i>
-                <input name="email" id= "email" placeholder= "CristianSuarez@gmail.com" type="email" />
+            <i class="bi bi-telephone-fill"></i>
+                <input name="number" id= "number" placeholder= "Numero de telefono" type="string" />
             </div>
             <div className='input-field'>
-            <i class="bi bi-lock-fill"></i>
-                <input name="password" id= "password" placeholder= "123456" type="password" />
+            <i className="bi bi-envelope-fill"></i>
+                <input name="email" id= "email" placeholder= "Mail" type="email" />
+            </div>
+            <div className='input-field'>
+            <i className="bi bi-lock-fill"></i>
+                <input name="password" id= "password" placeholder= "Contraseña" type="password" />
             </div>
             <span> ¿Ya tienes una cuenta? <Link to="/login">Inicia sesion</Link> </span>
             </div>
@@ -31,7 +74,8 @@ const Register = () => {
         
         </div>
     </div>
-  )
+    )
+
 }
 
 export default Register

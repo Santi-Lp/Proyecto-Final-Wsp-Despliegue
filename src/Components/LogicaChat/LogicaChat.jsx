@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import mensajes from "../../Data/data";
 
-const LogicaChat = () => {
+const LogicaChat =  () => {
+    
 
     const [listaMensajes, setListaMensajes] = useState(mensajes);
     const [formMensaje, setFormMensaje] = useState({ contenido: '' });
 
-    const handleSubmit = (e, id) => {
+    const handleSubmit = async (e, id) => {
         e.preventDefault();
 
         if (!formMensaje.contenido.trim()) {
@@ -16,11 +17,14 @@ const LogicaChat = () => {
 
         const nuevoMensaje = {
             autor: 'yo',
+            receptor: id,
             contenido: formMensaje.contenido,
             fecha: new Date().toLocaleTimeString(),
             estado: 'no entregado',
             id: `msj-${listaMensajes.find(contacto => contacto.id === id).conversacion.length + 1}`
         };
+
+        
 
         const listaActualizada = listaMensajes.map(contacto => {
             if (contacto.id === id) {
@@ -34,7 +38,9 @@ const LogicaChat = () => {
 
         setListaMensajes(listaActualizada);
         setFormMensaje({ contenido: '' });
-    };
+
+    }
+
 
     return {
         listaMensajes,

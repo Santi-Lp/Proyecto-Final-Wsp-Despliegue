@@ -2,7 +2,6 @@
     background-color: #182125;
     width: 100vw;
     height: 100%;
-    border-radius: 15px;
     overflow: hidden;
     background-size: cover;
 }
@@ -107,7 +106,8 @@
 
 @media (max-width: 600px) {
     .contenedor-contactos {
-        height: calc(100vh - 80px); 
+        height: 100vh;
+        
     }
 
     .header-contactos, .footer-contactos {

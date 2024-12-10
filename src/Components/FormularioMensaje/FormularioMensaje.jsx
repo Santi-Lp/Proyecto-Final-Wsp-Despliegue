@@ -15,7 +15,7 @@ const FormularioMensaje = ({ formMensaje, setFormMensaje, handleSubmit }) => {
     return (
         <form className="escribir-mensaje" onSubmit={handleSubmit}>
             <div className='contenedor-input'>
-                <i className="bi bi-emoji-smile icono-emoji"></i>
+                <i className="bi bi-emoji-smile icono-emoji" aria-label=' Añadir Emoji'> </i>
                 <input type='text' name="contenido" id="input-mensaje" onChange={handleChangeFormValue} value={formMensaje.contenido} placeholder='Escribe un mensaje'></input>
                 <button className='btn-adjuntar' type='button'>
                     <i className="bi bi-plus"></i>
