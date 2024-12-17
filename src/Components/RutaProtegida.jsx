@@ -3,10 +3,10 @@ import { useAuthContext } from '../Context/AuthContext'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const RutaProtegida = () => {
-    const {isAuthenticatedUser} = useAuthContext()
+    const token = sessionStorage.getItem("access_token");
 
     return (
-        isAuthenticatedUser ? <Outlet/> : <Navigate to = {"/login"} />
+        token ? <Outlet/> : <Navigate to = {"/login"} />
     )
 }
 

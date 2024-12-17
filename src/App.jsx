@@ -26,9 +26,12 @@ const App = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
 
+      <Route element={<RutaProtegida />}>
       <Route path='/contactos' element={<Contactos listaMensajes={listaMensajes} />} />
       <Route path='/chat/:id' element={<ContenedorChat listaMensajes={listaMensajes} handleSubmit={handleSubmit} formMensaje={formMensaje} setFormMensaje={setFormMensaje} />} />
       <Route path='/perfil/:id' element={<Perfil />} />
+      </Route>
+      
       
     </Routes>
     </>

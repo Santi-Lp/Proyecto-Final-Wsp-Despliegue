@@ -2,7 +2,7 @@ import React from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
-import { POST, unauthenticatedHeaders } from '../../fetching/htp.fetching.js'
+import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
 
 
 
@@ -22,19 +22,22 @@ const Login = () => {
   
           const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
           const response = await POST("http://localhost:5000/api/auth/login", {
-            headers: unauthenticatedHeaders,
+            headers: getUnAuthenticatedHeaders(),
             body: JSON.stringify(Objeto_valores)
-          })
+          }
+        )
           const access_token = response.payload.token
-          sessionStorage.setItem("access_token", access_token);
+          if (access_token) {
+            sessionStorage.setItem("access_token", access_token)
+          alert("Inicio de sesion exitoso");
           navigate("/contactos");
+        } else {
+          alert("Inicio de sesion fallido");
         }
-      catch (error) {
-      console.error(error);
-    }
-  }
-    
-  
+      } catch (error) {
+        console.log(error)
+      }
+        }  
   return (
     <div className='container'>
       <div className='form-content'>
@@ -43,11 +46,11 @@ const Login = () => {
           <div className='input-group'> 
             <div className='input-field'>
                 <i className="bi bi-envelope-fill"></i>
-                <input name="email" id= "email" placeholder= "Mail" type="email" />
+                <input required= "required" name="email" id= "email" placeholder= "Mail" type="email" />
             </div>
             <div className='input-field'>
                 <i className="bi bi-lock-fill"></i>
-                <input name="password" id= "password" placeholder= "Contraseña" type="password" />
+                <input  required= "required" name="password" id= "password" placeholder= "Contraseña" type="password" />
             </div>
               <span className='span-login'> ¿Aun no tienes una cuenta? <Link to="/register"> Registrate </Link> </span>
             </div>

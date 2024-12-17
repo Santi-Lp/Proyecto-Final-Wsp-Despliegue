@@ -2,7 +2,7 @@ import React from 'react'
 import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
-import { POST, unauthenticatedHeaders } from '../../fetching/htp.fetching.js'
+import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
 
 
 
@@ -23,7 +23,7 @@ const Register = () => {
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
         const response = await POST 
         ("http://localhost:5000/api/auth/register", {
-            headers: unauthenticatedHeaders,
+            headers: getUnAuthenticatedHeaders(),
             body: JSON.stringify(Objeto_valores)
         })
 
