@@ -2,6 +2,7 @@ import React from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
+import { POST, unauthenticatedHeaders } from '../../fetching/htp.fetching.js'
 
 
 
@@ -9,36 +10,31 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmitLogin  = (e) => {
-    e.preventDefault();
-    const formulario = e.target;
-        const formulario_valores = new FormData(formulario);
-        const formulario_campos = {
-            "email" : "",
-            "password" : "",
-            }
-
-        const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-        fetch("http://localhost:5000/api/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(Objeto_valores) 
-        })
-        .then(response => {
-          if(response.ok) {
-            alert("Usuario logueado correctamente");
-            navigate("/contactos");
-          } else {
-            alert("Error al loguear el usuario");
-          }
-        })
-        .catch(error => 
-          {console.error("Error al loguear el usuario",error); 
-            alert("Error al loguear el usuario");}
-        )
+  const handleSubmitLogin  = async (e) => {
+    try{
+      e.preventDefault();
+      const formulario = e.target;
+          const formulario_valores = new FormData(formulario);
+          const formulario_campos = {
+              "email" : "",
+              "password" : "",
+              }
+  
+          const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
+          const response = await POST("http://localhost:5000/api/auth/login", {
+            headers: unauthenticatedHeaders,
+            body: JSON.stringify(Objeto_valores)
+          })
+          const access_token = response.payload.token
+          sessionStorage.setItem("access_token", access_token);
+          navigate("/contactos");
+        }
+      catch (error) {
+      console.error(error);
+    }
   }
+    
+  
   return (
     <div className='container'>
       <div className='form-content'>

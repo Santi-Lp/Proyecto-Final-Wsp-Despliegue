@@ -2,14 +2,16 @@ import React from 'react'
 import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
+import { POST, unauthenticatedHeaders } from '../../fetching/htp.fetching.js'
 
 
 
 const Register = () => {
     const navigate = useNavigate();
 
-    const handleSubmitRegister = (e) => {
-        e.preventDefault();
+    const handleSubmitRegister =  async (e) => {
+        try {
+            e.preventDefault();
         const formulario = e.target;
         const formulario_valores = new FormData(formulario);
         const formulario_campos = {
@@ -19,13 +21,12 @@ const Register = () => {
             "number" : ""
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-        fetch("http://localhost:5000/api/auth/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(Objeto_valores) 
+        const response = await POST 
+        ("http://localhost:5000/api/auth/register", {
+            headers: unauthenticatedHeaders,
+            body: JSON.stringify(Objeto_valores)
         })
+
         .then(response => {
             if(response.ok) {
                 alert("Usuario creado correctamente");
@@ -34,14 +35,11 @@ const Register = () => {
                 alert("Error al crear el usuario");
             }
         })
-        .catch(error => {
-            console.error( "Error al crear el usuario",error);
-            alert("Error al crear el usuario");
-        })
-
-        
-        
-    }
+        }
+        catch (error) {
+            console.error(error);
+        }
+}
   return (
     <div className='container'>
         <div className='form-content'>
