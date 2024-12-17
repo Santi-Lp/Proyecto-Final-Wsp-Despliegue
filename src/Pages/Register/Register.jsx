@@ -3,7 +3,7 @@ import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
 import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
-import { ENVIROMENT } from '../../enviroment.js'
+import ENVIROMENT  from '../../enviroment.js'
 
 
 
