@@ -3,6 +3,7 @@ import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
 import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
+import ENVIROMENT from '../../enviroment.js'
 
 
 
@@ -21,7 +22,7 @@ const Login = () => {
               }
   
           const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-          const response = await POST("http://localhost:5000/api/auth/login", {
+          const response = await POST(`${ENVIROMENT.URL_BACKEND}/api/auth/login`, {
             headers: getUnAuthenticatedHeaders(),
             body: JSON.stringify(Objeto_valores)
           }

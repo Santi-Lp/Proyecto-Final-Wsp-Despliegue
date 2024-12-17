@@ -3,6 +3,7 @@ import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
 import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
+import { ENVIROMENT } from '../../utils/enviroment.js'
 
 
 
@@ -22,7 +23,7 @@ const Register = () => {
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
         const response = await POST 
-        ("http://localhost:5000/api/auth/register", {
+        (`${ENVIROMENT.URL_BACKEND}/api/auth/register`, {
             headers: getUnAuthenticatedHeaders(),
             body: JSON.stringify(Objeto_valores)
         })
