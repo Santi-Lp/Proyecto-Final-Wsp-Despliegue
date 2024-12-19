@@ -23,7 +23,7 @@ const Register = () => {
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
         const response = await POST 
-        (`${ENVIROMENT.URL_BACKEND}/api/auth/register`, {
+        (`https://backend-final-wsp-despliegue-2.vercel.app/api/auth/register`, {
             headers: getUnAuthenticatedHeaders(),
             body: JSON.stringify(Objeto_valores)
         })
