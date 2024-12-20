@@ -22,10 +22,14 @@ const Login = () => {
               }
   
           const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-          const response = await POST(`https://backend-final-wsp-despliegue-2.vercel.app/api/auth/login`, {
-            headers: getUnAuthenticatedHeaders(),
+          const response = await fetch(`https://backend-final-wsp-despliegue-2.vercel.app/api/auth/login`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              "x-api-key": "cacda5fe-c409-441a-bbbf-1788e204ddc9"
+            },
             body: JSON.stringify(Objeto_valores)
-          }
+            }
         )
           const access_token = response.payload.token
           if (access_token) {
