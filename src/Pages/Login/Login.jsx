@@ -29,16 +29,24 @@ const Login = () => {
               "x-api-key": "cacda5fe-c409-441a-bbbf-1788e204ddc9"
             },
             body: JSON.stringify(Objeto_valores)
-            }
-        )
-          const access_token = response.payload.token
+          });
+          
+          if (!response.ok) {
+            const errorData = await response.json();
+            alert(errorData.message || "Error en el login");
+            return;
+          }
+          
+          const data = await response.json();
+          const access_token = data.payload.token;
           if (access_token) {
-            sessionStorage.setItem("access_token", access_token)
-          alert("Inicio de sesion exitoso");
-          navigate("/contactos");
-        } else {
-          alert("Inicio de sesion fallido");
-        }
+            sessionStorage.setItem("access_token", access_token);
+            alert("Inicio de sesión exitoso");
+            navigate("/contactos");
+          } else {
+            alert("Inicio de sesión fallido");
+          }
+          
       } catch (error) {
         console.log(error)
       }

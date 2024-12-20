@@ -22,25 +22,29 @@ const Register = () => {
             "number" : ""
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-        const response = await POST 
-        (`https://backend-final-wsp-despliegue-2.vercel.app/api/auth/register`, {
-            headers: getUnAuthenticatedHeaders(),
-            body: JSON.stringify(Objeto_valores)
-        })
-
-        .then(response => {
-            if(response.ok) {
-                alert("Usuario creado correctamente");
-                navigate("/login");
-            } else {
-                alert("Error al crear el usuario");
+        const response = await fetch(
+            `https://backend-final-wsp-despliegue-2.vercel.app/api/auth/register`,
+            {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": "cacda5fe-c409-441a-bbbf-1788e204ddc9",
+            },
+            body: JSON.stringify(Objeto_valores),
             }
-        })
+        );
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            alert(errorData.message || "Error al registrar el usuario");
+            return;
         }
-        catch (error) {
-            console.error(error);
+        alert("Usuario registrado exitosamente");
+        navigate("/login");
+        } catch (error) {
+            console.log(error);
         }
-}
+    }
   return (
     <div className='container'>
         <div className='form-content'>
