@@ -3,7 +3,8 @@ import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
 import extraerFormulario from '../../utils/extractFormData.js'
 import { getUnAuthenticatedHeaders, POST} from '../../fetching/htp.fetching.js'
-import ENVIROMENT  from '../../enviroment.js'
+import ENVIROMENT from '../../enviroment.js'
+
 
 
 
@@ -22,17 +23,14 @@ const Register = () => {
             "number" : ""
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-        const response = await fetch(
-            `https://backend-final-wsp-despliegue-2.vercel.app/api/auth/register`,
-            {
-            method: "POST",
+        const response = await POST(`${ENVIROMENT.API_URL}/api/auth/register`, {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
-                "x-api-key": "cacda5fe-c409-441a-bbbf-1788e204ddc9",
+                'Content-Type': 'application/json',
+                "x-api-key": "cacda5fe-c409-441a-bbbf-1788e204ddc9"
             },
-            body: JSON.stringify(Objeto_valores),
-            }
-        );
+            body: JSON.stringify(Objeto_valores)
+        })
         
         if (!response.ok) {
             const errorData = await response.json();
@@ -56,7 +54,7 @@ const Register = () => {
                 <input name="name" id= "name" placeholder= "Nombre" type="text" />
             </div>
             <div className='input-field'>
-            <i class="bi bi-telephone-fill"></i>
+            <i className="bi bi-telephone-fill"></i>
                 <input name="number" id= "number" placeholder= "Numero de telefono" type="string" />
             </div>
             <div className='input-field'>

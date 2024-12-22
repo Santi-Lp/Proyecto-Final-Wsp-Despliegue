@@ -1,6 +1,6 @@
-export const POST = async (URL_API, params) => {
+export const POST = async (URL_BACKEND, params) => {
     try {
-        const response = await fetch(URL_API, {
+        const response = await fetch(URL_BACKEND, {
             method: 'POST',
             ...params
         })
