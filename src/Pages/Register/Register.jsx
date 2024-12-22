@@ -23,7 +23,7 @@ const Register = () => {
             "number" : ""
         }
         const Objeto_valores = extraerFormulario(formulario_campos, formulario_valores);
-        const response = await POST(`${ENVIROMENT.API_URL}/api/auth/register`, {
+        const response = await fetch(`${ENVIROMENT.API_URL}/api/auth/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
